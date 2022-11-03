@@ -27,13 +27,18 @@ body {
   margin-bottom: 20px;
 }
 
+.time__display{
+
+  box-shadow: 3px 3px 2px black
+}
+
 .stopwatch {
-  background-color: white;
-  border: 3px solid black;
+  
   width: 50%;
-  font-size: 30px;
+  font-size: 72px;
   text-align: center;
   border-radius: 10px;
+  position:relative
 }
 
 .button__wrapper {
@@ -69,13 +74,13 @@ body {
   background-color: #205e94;
 }
 #pause {
-  background-color: #c43030;
+  background-color: #560a0a;
 }
 #reset {
-  background-color: #1bb881;
+  background-color: #08553a;
 }
 #lap {
-  background-color: #edca06;
+  background-color: #dcdbd8;
 }
 
 #start:hover {
@@ -125,3 +130,15 @@ body {
   margin-bottom:15px;
   border-bottom: 1px solid black;
 }
+
+
+.fa-regular, .fa-moon{
+position:absolute;
+  font-size: 20px;
+  top:0;
+  right:0;
+
+
+
+}
+

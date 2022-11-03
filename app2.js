@@ -38,11 +38,7 @@ function updateTime() {
   timeDisplay.innerHTML = ` ${h} : ${m} : ${s} : ${ms}`;
 }
 
-function removeChild() {
-  while (lapList.hasChildElements()) {
-    lapList.removeChild(lapList.lastChild);
-  }
-}
+
 
 //addEvent listeners to our buttons
 
@@ -84,7 +80,7 @@ document.getElementById("lap").addEventListener("click", () => {
 
   const paraTime = document.createElement('p')
   paraTime.classList.add('para__time')
-  paraTime.innerHTML =  `${n}. ` + timeDisplay.innerHTML 
+  paraTime.innerHTML =  `-Lap${n} ` + timeDisplay.innerHTML 
 
   const lapButton = document.createElement("button")
   lapButton.classList.add("lap__button");
@@ -95,13 +91,19 @@ document.getElementById("lap").addEventListener("click", () => {
   lapList.appendChild(lapItem);
   lapItem.appendChild(paraTime);
   lapItem.appendChild(lapButton);
+  document.querySelectorAll('.lap__button').forEach(element=>{
+    element.addEventListener('click', ()=>{
+    
+        element.parentElement.remove()
+        n--
+    })
+    
+  })
   
 });
 
 
-document.querySelectorAll('.lap__button').addEventListener('click', ()=>{
 
 
-})
 
 //Adding zeros and finilazing the display
