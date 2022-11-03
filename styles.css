@@ -27,18 +27,16 @@ body {
   margin-bottom: 20px;
 }
 
-.time__display{
-
-  box-shadow: 3px 3px 2px black
+.time__display {
+  box-shadow: 3px 3px 2px black;
 }
 
 .stopwatch {
-  
   width: 50%;
-  font-size: 72px;
+  font-size: 56px;
   text-align: center;
   border-radius: 10px;
-  position:relative
+  position: relative;
 }
 
 .button__wrapper {
@@ -116,29 +114,26 @@ body {
   color: white;
   padding: 2px 4px;
   margin-left: 40px;
-  margin-bottom:2px;
-  font-weight:700;
-  border-radius:10px;
-  border:none;
+  margin-bottom: 2px;
+  font-weight: 700;
+  border-radius: 10px;
+  border: none;
 }
 
 .lap__item {
-    
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom:15px;
+  margin-bottom: 15px;
   border-bottom: 1px solid black;
 }
 
-
-.fa-regular, .fa-moon{
-position:absolute;
+.fa-regular,
+.fa-moon,
+.fa-sun {
+  position: absolute;
   font-size: 20px;
-  top:0;
-  right:0;
-
-
-
+  top: 0;
+  right: 70px;
 }
 

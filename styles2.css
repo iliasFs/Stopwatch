@@ -1,141 +1,135 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  color: #76b108;
+}
+
+.container {
+  height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.stopwatch__description-header {
+  margin-bottom: 20px;
+}
+
+.time__display {
+  box-shadow: 3px 3px 2px rgb(134, 131, 131);
+}
+
+.stopwatch {
+  width: 50%;
+  font-size: 56px;
+  text-align: center;
+  border-radius: 10px;
+  position: relative;
+}
+
+.button__wrapper {
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+#start,
+#pause,
+#reset,
+#lap {
+  font-size: 15px;
+  font-weight: 700;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  margin-right: 10px;
+  transition: all 500ms ease;
+  box-shadow: 0 10px 15px rgba(31, 29, 29, 0.687);
+}
+
+#stopwatch__display {
+  max-width: 100%;
+  text-align: center;
+  overflow: hidden;
+  padding: 10px 10px;
+}
+
+.lap__list {
+  margin-top: 20px;
+}
+
+#start, #pause, #reset, #lap {
+
     background-color: black;
-    color:#185f08;
-    
-  }
+    color:#76b108;
+    border:1px dotted #76b108
+}
   
-  .container {
-    height: 100vh;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .stopwatch__description-header {
-    margin-bottom: 20px;
-  }
+
   
-  .time__display{
+
+
+
+#start:hover {
+  transform: translateY(-2px);
+}
+#pause:hover {
+  transform: translateY(-2px);
+}
+#reset:hover {
+  transform: translateY(-2px);
+}
+#lap:hover {
+  transform: translateY(-2px);
+}
+
+#start:active {
+  background-color: white;
+}
+#pause:active {
+  background-color: white;
+}
+#reset:active {
+  background-color: white;
+}
+
+#lap:active {
+  background-color: white;
+}
+
+.lap__button {
+  font-size: 8px;
+  background-color: black;
+  color: white;
+  padding: 4px 8px;
+  margin-left: 40px;
+  margin-bottom: 2px;
+  font-weight: 400;
+  border-radius: 10px;
+  border: 1px solid #76b108;
   
-    box-shadow: 3px 3px 2px rgb(134, 131, 131)
-  }
-  
-  .stopwatch {
-    
-    width: 50%;
-    font-size: 72px;
-    text-align: center;
-    border-radius: 10px;
-    position:relative
-  }
-  
-  .button__wrapper {
-    margin-top: 20px;
-    margin-left: 10px;
-  }
-  
-  #start,
-  #pause,
-  #reset,
-  #lap {
-    font-size: 15px;
-    font-weight: 700;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    margin-right: 10px;
-    transition: all 500ms ease;
-    box-shadow: 0 10px 15px rgb(63, 61, 61);
-  }
-  
-  #stopwatch__display {
-    max-width: 100%;
-    text-align: center;
-    overflow: hidden;
-    padding: 10px 10px;
-  }
-  
-  .lap__list {
-    margin-top: 20px;
-  }
-  #start {
-    background-color: #205e94;
-  }
-  #pause {
-    background-color: #560a0a;
-  }
-  #reset {
-    background-color: #08553a;
-  }
-  #lap {
-    background-color: #dcdbd8;
-  }
-  
-  #start:hover {
-    transform: translateY(-2px);
-  }
-  #pause:hover {
-    transform: translateY(-2px);
-  }
-  #reset:hover {
-    transform: translateY(-2px);
-  }
-  #lap:hover {
-    transform: translateY(-2px);
-  }
-  
-  #start:active {
-    background-color: white;
-  }
-  #pause:active {
-    background-color: white;
-  }
-  #reset:active {
-    background-color: white;
-  }
-  
-  #lap:active {
-    background-color: white;
-  }
-  
-  .lap__button {
-    font-size: 8px;
-    background-color: black;
-    color: white;
-    padding: 2px 4px;
-    margin-left: 40px;
-    margin-bottom:2px;
-    font-weight:700;
-    border-radius:10px;
-    border:none;
-  }
-  
-  .lap__item {
-      
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom:15px;
-    border-bottom: 1px solid black;
-  }
-  
-  
-  .fa-regular, .fa-moon{
-  position:absolute;
-    font-size: 20px;
-    top:0;
-    right:0;
-  
-  
-  
-  }
-  
-  
+}
+
+.lap__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  border-bottom: 1px solid black;
+}
+
+.fa-regular,
+.fa-moon,
+.fa-sun {
+  position: absolute;
+  font-size: 20px;
+  top: 0;
+  right: 70px;
+}
+
