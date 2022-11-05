@@ -7,6 +7,7 @@
 body {
   background-color: black;
   color: #76b108;
+  transition: all 1s ease;
 }
 
 .container {
@@ -23,15 +24,14 @@ body {
 }
 
 .time__display {
-  box-shadow: 3px 3px 2px rgb(134, 131, 131);
+  display: block;
 }
 
 .stopwatch {
-  width: 50%;
+  position: relative;
   font-size: 56px;
   text-align: center;
   border-radius: 10px;
-  position: relative;
 }
 
 .button__wrapper {
@@ -50,7 +50,6 @@ body {
   border-radius: 10px;
   margin-right: 10px;
   transition: all 500ms ease;
-  box-shadow: 0 10px 15px rgba(31, 29, 29, 0.687);
 }
 
 #stopwatch__display {
@@ -64,17 +63,14 @@ body {
   margin-top: 20px;
 }
 
-#start, #pause, #reset, #lap {
-
-    background-color: black;
-    color:#76b108;
-    border:1px dotted #76b108
+#start,
+#pause,
+#reset,
+#lap {
+  background-color: black;
+  color: #76b108;
+  border: 1px dotted #76b108;
 }
-  
-
-  
-
-
 
 #start:hover {
   transform: translateY(-2px);
@@ -113,7 +109,6 @@ body {
   font-weight: 400;
   border-radius: 10px;
   border: 1px solid #76b108;
-  
 }
 
 .lap__item {
@@ -129,7 +124,30 @@ body {
 .fa-sun {
   position: absolute;
   font-size: 20px;
-  top: 0;
-  right: 70px;
+  top: -48px;
+  right: -30px;
 }
 
+@media (max-width: 770px) {
+  .stopwatch {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 440px) {
+  .stopwatch {
+    font-size: 24px;
+  }
+
+  .button__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #start,
+  #pause,
+  #reset,
+  #lap {
+    margin-top: 10px;
+  }
+}

@@ -9,7 +9,7 @@ let resetButton = document.getElementById("reset");
 let lapButton = document.getElementById("lap");
 let lapList = document.querySelector(".lap__list");
 let intervalId;
-let n=0
+let n = 0;
 
 //create a function to update our time wich will run in the setInterval
 function updateTime() {
@@ -38,11 +38,9 @@ function updateTime() {
   timeDisplay.innerHTML = ` ${h} : ${m} : ${s} : ${ms}`;
 }
 
-
-
 //addEvent listeners to our buttons
 
-document.getElementById("start").addEventListener("click", () => {
+startButton.addEventListener("click", () => {
   if (intervalId !== null) {
     clearInterval(intervalId);
   }
@@ -50,83 +48,62 @@ document.getElementById("start").addEventListener("click", () => {
   // setInterval takes as parameters a function that will run continiously every 10ms as the second parameter
 });
 
-
-
-
-document.getElementById("pause").addEventListener("click", () => {
+pauseButton.addEventListener("click", () => {
   clearInterval(intervalId);
 });
 
-
-
-document.getElementById("reset").addEventListener("click", () => {
-    while (lapList.firstChild) {
-        lapList.removeChild(lapList.lastChild);
-      }
+resetButton.addEventListener("click", () => {
+  while (lapList.firstChild) {
+    lapList.removeChild(lapList.lastChild);
+  }
   clearInterval(intervalId);
   [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
   timeDisplay.innerHTML = "00 : 00 : 00 : 000";
-  n=0;
-  
+  n = 0;
 });
 
-document.getElementById("lap").addEventListener("click", () => {
-  
-  n++
+//
+
+lapButton.addEventListener("click", () => {
+  n++;
   const lapItem = document.createElement("div");
-  lapItem.classList.add('lap__item')
-  
+  lapItem.classList.add("lap__item");
 
+  const paraTime = document.createElement("p");
+  paraTime.classList.add("para__time");
+  paraTime.innerHTML = `      Lap${n}) ` + timeDisplay.innerHTML;
 
-  const paraTime = document.createElement('p')
-  paraTime.classList.add('para__time')
-  paraTime.innerHTML =  `-Lap${n} ` + timeDisplay.innerHTML 
-
-  const lapButton = document.createElement("button")
+  const lapButton = document.createElement("button");
   lapButton.classList.add("lap__button");
   lapButton.innerHTML = "DELETE";
-  
 
-  
   lapList.appendChild(lapItem);
   lapItem.appendChild(paraTime);
   lapItem.appendChild(lapButton);
-  document.querySelectorAll('.lap__button').forEach(element=>{
-    element.addEventListener('click', ()=>{
-    
-        element.parentElement.remove()
-        
-    })
-    
-  })
-  
+  document.querySelectorAll(".lap__button").forEach((element) => {
+    element.addEventListener("click", () => {
+      element.parentElement.remove();
+    });
+  });
 });
-
-
 
 // DARK-MODE
 
-const css = document.querySelector('#cssfile')
-const icon = document.querySelector('#icon')
-let change = true
-icon.addEventListener('click', ()=>{
-
-if(icon.hasAttributes('fa-moon')){
-    if (change){
-        css.setAttribute('href', 'styles2.css')
-        icon.classList.remove('fa-moon')
-        icon.classList.add('fa-sun')
-        change = false
+const css = document.querySelector("#cssfile");
+const icon = document.querySelector("#icon");
+let change = true;
+icon.addEventListener("click", () => {
+  if (icon.hasAttributes("fa-moon")) {
+    if (change) {
+      css.setAttribute("href", "styles2.css");
+      icon.classList.remove("fa-moon");
+      icon.classList.add("fa-sun");
+      change = false;
+    } else {
+      css.setAttribute("href", "styles.css");
+      icon.classList.remove("fa-sun");
+      icon.classList.add("fa-moon");
+      change = true;
     }
-    else{
-        css.setAttribute('href', 'styles.css')
-        icon.classList.remove('fa-sun')
-        icon.classList.add('fa-moon')
-        change = true
-    }
-}
-
-
-
-})
-
+  }
+});

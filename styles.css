@@ -5,6 +5,7 @@
 }
 
 body {
+  transition: all 1s ease;
   background: rgb(3, 0, 2);
   background: linear-gradient(
     90deg,
@@ -32,11 +33,10 @@ body {
 }
 
 .stopwatch {
-  width: 50%;
+  position: relative;
   font-size: 56px;
   text-align: center;
   border-radius: 10px;
-  position: relative;
 }
 
 .button__wrapper {
@@ -122,9 +122,8 @@ body {
 
 .lap__item {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 24px;
   border-bottom: 1px solid black;
 }
 
@@ -133,7 +132,30 @@ body {
 .fa-sun {
   position: absolute;
   font-size: 20px;
-  top: 0;
-  right: 70px;
+  top: -48px;
+  right: -30px;
 }
 
+@media (max-width: 770px) {
+  .stopwatch {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 440px) {
+  .stopwatch {
+    font-size: 24px;
+  }
+
+  .button__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #start,
+  #pause,
+  #reset,
+  #lap {
+    margin-top: 10px;
+  }
+}
